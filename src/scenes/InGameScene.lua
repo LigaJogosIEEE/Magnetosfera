@@ -31,7 +31,6 @@ function InGameScene:mousereleased(x, y, button)
 end
 
 function InGameScene:update(dt)
-    bar:update(dt)
     gameDirector:update(dt)
 end
 
