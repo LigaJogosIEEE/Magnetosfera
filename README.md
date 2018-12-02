@@ -17,4 +17,5 @@ Love2d - Um Framework Lua, pode ser encontrado nesse link: https://love2d.org . 
 
 ## Bibliotecas de terceiros
 
-Sem a utilização de nenhuma biblioteca de terceiros até o momento
+MoonJohn -> <https://github.com/Jictyvoo/MoonJohn>
+Sanghost -> <https://github.com/Jictyvoo/Sanghost>
