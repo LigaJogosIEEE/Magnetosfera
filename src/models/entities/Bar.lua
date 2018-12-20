@@ -2,11 +2,12 @@ local Bar = {}
 
 Bar.__index = Bar
 
-function Bar:new(world, x, y, width, height)
+function Bar:new(world, x, y, width, height, speed)
     local this = {
         world = world or love.physics.newWorld(0, 0),
         body = love.physics.newBody(world, x, y, "kinematic"),
-        shape = love.physics.newRectangleShape(width, height)
+        shape = love.physics.newRectangleShape(width, height),
+        speed = speed or 100
     }
     
     --aplying physics
@@ -21,7 +22,10 @@ function Bar:new(world, x, y, width, height)
 end
 
 function Bar:update(dt)
-    self.body:setLinearVelocity(0, 100)
+    self.body:setLinearVelocity(0, self.speed)
+    if self.body:getY() < 0 or self.body:getY() > 1000 then
+        gameDirector:removeBar(self, self.speed < 0 and true)
+    end
 end
 
 function Bar:draw()
